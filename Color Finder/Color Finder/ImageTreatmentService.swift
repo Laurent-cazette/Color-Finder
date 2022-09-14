@@ -9,7 +9,9 @@ import SwiftUI
 
 class ImageTreatmentService {
 
-    func cropPicture(_ inputImage: UIImage) -> UIImage? {
+    
+    
+    func cropPicture(inputImage: UIImage) -> UIImage? {
         let targetRect = CGRect(x: inputImage.size.width / 4,
                                y: inputImage.size.height / 4,
                                width: inputImage.size.width / 2,

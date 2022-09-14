@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Color_FinderApp: App {
+    static var ImageTreatmentService: ImageTreatmentService?
     var body: some Scene {
         WindowGroup {
-            SelectColor()
+            SelectColor(service: Color_FinderApp.ImageTreatmentService!)
         }
     }
 }
