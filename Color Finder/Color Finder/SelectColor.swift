@@ -16,6 +16,8 @@ struct SelectColor: View {
                 ColorPicker("Select the wanted Color", selection: $bgColor)
                     .padding()
                 NavigationLink("Search", destination: ColorDetectionView(capturedImage: $capturedImage))
+                Image("car")
+                    .resizable()
             }
         }
         

@@ -18,6 +18,7 @@
 		4D8CED7328D0A06C00E7CDB7 /* ColorDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED7228D0A06C00E7CDB7 /* ColorDetectionView.swift */; };
 		4DAF027028D0F9690055C761 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF026F28D0F9690055C761 /* CameraService.swift */; };
 		4DAF027228D1088E0055C761 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF027128D1088E0055C761 /* CameraView.swift */; };
+		4DE72DF028D2571E00D2DABE /* ImageTreatmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE72DEF28D2571E00D2DABE /* ImageTreatmentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4D8CED7228D0A06C00E7CDB7 /* ColorDetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetectionView.swift; sourceTree = "<group>"; };
 		4DAF026F28D0F9690055C761 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		4DAF027128D1088E0055C761 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		4DE72DEF28D2571E00D2DABE /* ImageTreatmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTreatmentService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				4D8CED4228D05AA300E7CDB7 /* Color_FinderApp.swift */,
 				4D8CED6E28D05C7200E7CDB7 /* SelectColor.swift */,
+				4DE72DEF28D2571E00D2DABE /* ImageTreatmentService.swift */,
 				4D8CED7228D0A06C00E7CDB7 /* ColorDetectionView.swift */,
 				4D8CED7028D0844000E7CDB7 /* ColorFinderConfig.swift */,
 				4DAF026F28D0F9690055C761 /* CameraService.swift */,
@@ -273,6 +276,7 @@
 				4D8CED4328D05AA300E7CDB7 /* Color_FinderApp.swift in Sources */,
 				4D8CED7328D0A06C00E7CDB7 /* ColorDetectionView.swift in Sources */,
 				4DAF027228D1088E0055C761 /* CameraView.swift in Sources */,
+				4DE72DF028D2571E00D2DABE /* ImageTreatmentService.swift in Sources */,
 				4D8CED7128D0844000E7CDB7 /* ColorFinderConfig.swift in Sources */,
 				4D8CED6F28D05C7200E7CDB7 /* SelectColor.swift in Sources */,
 			);

@@ -14,4 +14,4 @@ struct Color_FinderApp: App {
             SelectColor()
         }
     }
-
+}
