@@ -20,6 +20,7 @@ struct ColorDetectionView: View {
                 case .success(let photo):
                     if let data = photo.fileDataRepresentation() {
                         capturedImage = UIImage(data: data)
+                        print(convertUIColorToInt(inputImage: capturedImage!))
                     } else {
                         print("Error: no image data found")
                     }
@@ -29,4 +30,12 @@ struct ColorDetectionView: View {
             }
         }
     }
+}
+
+func calculateFrequency(SelectedColor: [Float], foundColor: [Float]) -> Float {
+    var difference: Float = 0.0
+    //si la différence est supérieur à 10% return 0
+    difference = abs(SelectedColor[0] - foundColor[0]) + abs(SelectedColor[1] - foundColor[1]) + abs(SelectedColor[2] - foundColor[2])
+    let differencePourcentage = (300 - difference) / 3
+    return differencePourcentage
 }

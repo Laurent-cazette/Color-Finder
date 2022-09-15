@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectColor: View {
     @State private var bgColor = Color(.sRGB, red: 0, green: 0, blue: 0)
     @State private var capturedImage: UIImage? = nil
-    var TestImage : UIImage = UIImage(named: "lofi") ?? UIImage()
+    var TestImage : UIImage = UIImage(named: "car") ?? UIImage()
     var croppedPicture : UIImage
     init() {
         self.croppedPicture = cropPicture(inputImage: TestImage)!
@@ -25,13 +25,16 @@ struct SelectColor: View {
                     .resizable()
                     .onAppear {
                         print(convertUIColorToInt(inputImage: croppedPicture))
+                        print([Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255)])
+                        print(calculateFrequency(SelectedColor: convertUIColorToInt(inputImage: croppedPicture),
+                                                 foundColor: [Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255), Float(bgColor.components!.a)]))
                     }
             }
         }
         
     }
 }
- 
+
 func convertUIColorToInt(inputImage: UIImage) -> [Float] {
     var resultArray = [Float]()
     var red = CGFloat(0)
@@ -76,6 +79,19 @@ extension UIImage {
           return UIColor(red: r, green: g, blue: b, alpha: a)
       }
   }
+
+extension Color {
+    struct Components {
+        var r, g, b, a: Float
+    }
+    
+    var components: Components? {
+        guard let components = UIColor(self).cgColor.components?.compactMap(Float.init),
+              components.count == 4
+        else { return nil}
+        return Components(r: components[0], g: components[1], b: components[2], a: components[3])
+    }
+}
 
 struct SelectColor_Previews: PreviewProvider {
     static var previews: some View {
