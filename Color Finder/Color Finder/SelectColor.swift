@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectColor: View {
     @State private var bgColor = Color(.sRGB, red: 0, green: 0, blue: 0)
     @State private var capturedImage: UIImage? = nil
-    var TestImage : UIImage = UIImage(named: "car") ?? UIImage()
+    var TestImage : UIImage = UIImage(named: "lofi") ?? UIImage()
     var croppedPicture : UIImage
     init() {
         self.croppedPicture = cropPicture(inputImage: TestImage)!
@@ -24,13 +24,7 @@ struct SelectColor: View {
                 Image(uiImage: croppedPicture)
                     .resizable()
                     .onAppear {
-                        var red = CGFloat(0)
-                        var green = CGFloat(0)
-                        var blue = CGFloat(0)
-                        var alpha = CGFloat(0)
-                        
-                        croppedPicture.getPixelColor(pos: CGPoint(x: 0, y: 0)).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-                        print(Double(red/255), Double(green/255), Double(blue/255), Double(alpha))
+                        print(convertUIColorToInt(inputImage: croppedPicture))
                     }
             }
         }
@@ -38,6 +32,18 @@ struct SelectColor: View {
     }
 }
  
+func convertUIColorToInt(inputImage: UIImage) -> [Float] {
+    var resultArray = [Float]()
+    var red = CGFloat(0)
+    var green = CGFloat(0)
+    var blue = CGFloat(0)
+    var alpha = CGFloat(0)
+
+    inputImage.getPixelColor(pos: CGPoint(x: 0, y: 0)).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+    resultArray.append(contentsOf: [Float(red * 255.0), Float(green * 255.0), Float(blue * 255.0), Float(alpha)])
+    return resultArray
+}
+
 func cropPicture(inputImage: UIImage) -> UIImage? {
     let targetRect = CGRect(x: inputImage.size.width / 4,
                            y: inputImage.size.height / 4,
