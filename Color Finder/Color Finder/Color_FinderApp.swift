@@ -11,6 +11,7 @@ import SwiftUI
 struct Color_FinderApp: App {
     var body: some Scene {
         WindowGroup {
+            SelectColor()
         }
     }
 }
