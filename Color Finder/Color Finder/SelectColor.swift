@@ -9,33 +9,28 @@ import SwiftUI
 
 struct SelectColor: View {
     @State private var bgColor = Color(.sRGB, red: 0, green: 0, blue: 0)
-    @State private var capturedImage: UIImage? = nil
     var TestImage : UIImage = UIImage(named: "car") ?? UIImage()
     var croppedPicture : UIImage
     init() {
         self.croppedPicture = cropPicture(inputImage: TestImage)!
     }
     var body: some View {
-        NavigationView {
-            VStack {
-                ColorPicker("Select the wanted Color", selection: $bgColor)
-                    .padding()
-                NavigationLink("Search", destination: ColorDetectionView(capturedImage: $capturedImage))
-                Image(uiImage: croppedPicture)
-                    .resizable()
-                    .onAppear {
-                        print(convertUIImageToFloat(inputImage: croppedPicture))
-                        print([Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255)])
-                        print(calculateFrequency(SelectedColor: convertUIImageToFloat(inputImage: croppedPicture),
-                                                 foundColor: converColorToFloat(inputColor: bgColor)))
-                    }
-            }
+        VStack {                ColorPicker("Select the wanted Color", selection: $bgColor)
+                .padding()
+            NavigationLink("Search", destination: ColorDetectionView(inputColor: bgColor))
+            Image(uiImage: croppedPicture)
+                .resizable()
+                .onAppear {
+                    print(convertUIImageToFloat(inputImage: croppedPicture))
+                    print([Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255)])
+                    print(calculateFrequency(SelectedColor: convertUIImageToFloat(inputImage: croppedPicture),
+                                                 foundColor: convertColorToFloat(inputColor: bgColor)))
+                }
         }
-        
     }
 }
 
-func converColorToFloat(inputColor: Color) -> [Float] {
+func convertColorToFloat(inputColor: Color) -> [Float] {
     let resultArray: [Float] = [Float(inputColor.components!.r * 255), Float(inputColor.components!.g * 255), Float(inputColor.components!.b * 255), Float(inputColor.components!.a)]
     return resultArray
 }
