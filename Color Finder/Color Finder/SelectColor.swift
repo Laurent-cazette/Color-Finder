@@ -24,10 +24,10 @@ struct SelectColor: View {
                 Image(uiImage: croppedPicture)
                     .resizable()
                     .onAppear {
-                        print(convertUIColorToInt(inputImage: croppedPicture))
+                        print(convertUIImageToFloat(inputImage: croppedPicture))
                         print([Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255)])
-                        print(calculateFrequency(SelectedColor: convertUIColorToInt(inputImage: croppedPicture),
-                                                 foundColor: [Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255), Float(bgColor.components!.a)]))
+                        print(calculateFrequency(SelectedColor: convertUIImageToFloat(inputImage: croppedPicture),
+                                                 foundColor: converColorToFloat(inputColor: bgColor)))
                     }
             }
         }
@@ -35,7 +35,12 @@ struct SelectColor: View {
     }
 }
 
-func convertUIColorToInt(inputImage: UIImage) -> [Float] {
+func converColorToFloat(inputColor: Color) -> [Float] {
+    let resultArray: [Float] = [Float(inputColor.components!.r * 255), Float(inputColor.components!.g * 255), Float(inputColor.components!.b * 255), Float(inputColor.components!.a)]
+    return resultArray
+}
+
+func convertUIImageToFloat(inputImage: UIImage) -> [Float] {
     var resultArray = [Float]()
     var red = CGFloat(0)
     var green = CGFloat(0)

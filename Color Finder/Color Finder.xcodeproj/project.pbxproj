@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4C5EE928D606B0001A4291 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C5EE828D606B0001A4291 /* ContentView.swift */; };
 		4D8CED4328D05AA300E7CDB7 /* Color_FinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED4228D05AA300E7CDB7 /* Color_FinderApp.swift */; };
 		4D8CED4728D05AA500E7CDB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CED4628D05AA500E7CDB7 /* Assets.xcassets */; };
 		4D8CED4A28D05AA500E7CDB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8CED4928D05AA500E7CDB7 /* Preview Assets.xcassets */; };
@@ -14,11 +15,10 @@
 		4D8CED5E28D05AA500E7CDB7 /* Color_FinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED5D28D05AA500E7CDB7 /* Color_FinderUITests.swift */; };
 		4D8CED6028D05AA500E7CDB7 /* Color_FinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED5F28D05AA500E7CDB7 /* Color_FinderUITestsLaunchTests.swift */; };
 		4D8CED6F28D05C7200E7CDB7 /* SelectColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED6E28D05C7200E7CDB7 /* SelectColor.swift */; };
-		4D8CED7128D0844000E7CDB7 /* ColorFinderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED7028D0844000E7CDB7 /* ColorFinderConfig.swift */; };
 		4D8CED7328D0A06C00E7CDB7 /* ColorDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CED7228D0A06C00E7CDB7 /* ColorDetectionView.swift */; };
 		4DAF027028D0F9690055C761 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF026F28D0F9690055C761 /* CameraService.swift */; };
 		4DAF027228D1088E0055C761 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF027128D1088E0055C761 /* CameraView.swift */; };
-		4DE72DF028D2571E00D2DABE /* ImageTreatmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE72DEF28D2571E00D2DABE /* ImageTreatmentService.swift */; };
+		4DDA0E4D28D46EE20063B9B7 /* FrequencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDA0E4C28D46EE20063B9B7 /* FrequencyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D4C5EE828D606B0001A4291 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D8CED3F28D05AA300E7CDB7 /* Color Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8CED4228D05AA300E7CDB7 /* Color_FinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_FinderApp.swift; sourceTree = "<group>"; };
 		4D8CED4628D05AA500E7CDB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,11 +50,10 @@
 		4D8CED5D28D05AA500E7CDB7 /* Color_FinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_FinderUITests.swift; sourceTree = "<group>"; };
 		4D8CED5F28D05AA500E7CDB7 /* Color_FinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_FinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4D8CED6E28D05C7200E7CDB7 /* SelectColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColor.swift; sourceTree = "<group>"; };
-		4D8CED7028D0844000E7CDB7 /* ColorFinderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFinderConfig.swift; sourceTree = "<group>"; };
 		4D8CED7228D0A06C00E7CDB7 /* ColorDetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetectionView.swift; sourceTree = "<group>"; };
 		4DAF026F28D0F9690055C761 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		4DAF027128D1088E0055C761 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		4DE72DEF28D2571E00D2DABE /* ImageTreatmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTreatmentService.swift; sourceTree = "<group>"; };
+		4DDA0E4C28D46EE20063B9B7 /* FrequencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				4D8CED4228D05AA300E7CDB7 /* Color_FinderApp.swift */,
+				4D4C5EE828D606B0001A4291 /* ContentView.swift */,
 				4D8CED6E28D05C7200E7CDB7 /* SelectColor.swift */,
-				4DE72DEF28D2571E00D2DABE /* ImageTreatmentService.swift */,
 				4D8CED7228D0A06C00E7CDB7 /* ColorDetectionView.swift */,
-				4D8CED7028D0844000E7CDB7 /* ColorFinderConfig.swift */,
+				4DDA0E4C28D46EE20063B9B7 /* FrequencyController.swift */,
 				4DAF026F28D0F9690055C761 /* CameraService.swift */,
 				4DAF027128D1088E0055C761 /* CameraView.swift */,
 				4D8CED4628D05AA500E7CDB7 /* Assets.xcassets */,
@@ -274,10 +274,10 @@
 			files = (
 				4DAF027028D0F9690055C761 /* CameraService.swift in Sources */,
 				4D8CED4328D05AA300E7CDB7 /* Color_FinderApp.swift in Sources */,
+				4D4C5EE928D606B0001A4291 /* ContentView.swift in Sources */,
+				4DDA0E4D28D46EE20063B9B7 /* FrequencyController.swift in Sources */,
 				4D8CED7328D0A06C00E7CDB7 /* ColorDetectionView.swift in Sources */,
 				4DAF027228D1088E0055C761 /* CameraView.swift in Sources */,
-				4DE72DF028D2571E00D2DABE /* ImageTreatmentService.swift in Sources */,
-				4D8CED7128D0844000E7CDB7 /* ColorFinderConfig.swift in Sources */,
 				4D8CED6F28D05C7200E7CDB7 /* SelectColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
