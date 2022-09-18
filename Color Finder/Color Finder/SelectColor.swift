@@ -9,16 +9,12 @@ import SwiftUI
 
 struct SelectColor: View {
     @State private var bgColor = Color(.sRGB, red: 0, green: 0, blue: 0)
-    var TestImage : UIImage = UIImage(named: "car") ?? UIImage()
-    var croppedPicture : UIImage
-    init() {
-        self.croppedPicture = cropPicture(inputImage: TestImage)!
-    }
     var body: some View {
-        VStack {                ColorPicker("Select the wanted Color", selection: $bgColor)
-                .padding()
+        VStack {
+            ColorPicker("Select the wanted Color", selection: $bgColor)
             NavigationLink("Search", destination: ColorDetectionView(inputColor: bgColor))
         }
+        .padding()
     }
 }
 
