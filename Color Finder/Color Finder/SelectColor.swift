@@ -18,14 +18,6 @@ struct SelectColor: View {
         VStack {                ColorPicker("Select the wanted Color", selection: $bgColor)
                 .padding()
             NavigationLink("Search", destination: ColorDetectionView(inputColor: bgColor))
-            Image(uiImage: croppedPicture)
-                .resizable()
-                .onAppear {
-                    print(convertUIImageToFloat(inputImage: croppedPicture))
-                    print([Float(bgColor.components!.r * 255), Float(bgColor.components!.g * 255), Float(bgColor.components!.b * 255)])
-                    print(calculateFrequency(SelectedColor: convertUIImageToFloat(inputImage: croppedPicture),
-                                                 foundColor: convertColorToFloat(inputColor: bgColor)))
-                }
         }
     }
 }

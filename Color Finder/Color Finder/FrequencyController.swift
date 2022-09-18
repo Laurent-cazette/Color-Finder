@@ -7,22 +7,25 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+
 
 class FrequencyController : NSObject {
     private var timer : Timer?
+    let SystemSoundID: SystemSoundID = 1103
     
     override init() {
         super.init()
         
-        self.timer = Timer.scheduledTimer( timeInterval: 3, target: self, selector: #selector(self.playBip), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(self.playBip), userInfo: nil, repeats: true)
     }
     
     func setTimer(Frequency: Double) {
         self.timer!.invalidate()
-        self.timer = Timer.scheduledTimer( timeInterval: 0, target: self, selector: #selector(self.playBip), userInfo: nil, repeats: false)
+        self.timer = Timer.scheduledTimer( timeInterval: abs(Frequency / 1000 - 1), target: self, selector: #selector(self.playBip), userInfo: nil, repeats: true)
     }
     
     @objc func playBip() {
-        print ("bip")
+        AudioServicesPlaySystemSound(SystemSoundID)
     }
 }

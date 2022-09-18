@@ -40,6 +40,7 @@ func calculateFrequency(SelectedColor: [Float], foundColor: [Float]) -> Float {
     var difference: Float = 0.0
     difference = abs(SelectedColor[0] - foundColor[0]) + abs(SelectedColor[1] - foundColor[1]) + abs(SelectedColor[2] - foundColor[2])
     let differencePerrcentage = (300 - difference) / 3
+    print(differencePerrcentage)
     if(differencePerrcentage < 70) {
         return 0
     }
