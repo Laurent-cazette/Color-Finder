@@ -5,13 +5,15 @@
 //  Created by Laurent Cazette on 13/09/2022.
 //
 import SwiftUI
+import Foundation
+import os.log
 
 struct ColorDetectionView: View {
     
     let cameraService = CameraService()
     let inputColor : Color
-    @State var capturedImage: UIImage? = nil
-    
+    @State var capturedImage: UIImage?
+
     var body: some View {
         let timerController = FrequencyController()
         var framesCount = 0
@@ -22,6 +24,7 @@ struct ColorDetectionView: View {
                     if let data = photo.fileDataRepresentation() {
                         framesCount = framesCount + 1
                         if (framesCount > 20) {
+                            cameraService.capturePhoto()
                             capturedImage = UIImage(data: data)
                             timerController.setTimer(Frequency: determineFrequency(inputImage: capturedImage!, inputColor: inputColor))
                             framesCount = 0
@@ -36,6 +39,7 @@ struct ColorDetectionView: View {
         }
     }
 }
+
 func calculateFrequency(SelectedColor: [Float], foundColor: [Float]) -> Float {
     var difference: Float = 0.0
     difference = abs(SelectedColor[0] - foundColor[0]) + abs(SelectedColor[1] - foundColor[1]) + abs(SelectedColor[2] - foundColor[2])
