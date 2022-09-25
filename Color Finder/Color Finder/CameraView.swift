@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 import Foundation
+import OSLog
 
 struct cameraView: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIViewController
@@ -48,6 +49,7 @@ struct cameraView: UIViewControllerRepresentable {
         }
         
         func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+            AudioServicesDisposeSystemSoundID(1108)
             if let error = error {
                 didFinishProcessingPhoto(.failure(error))
                 return
