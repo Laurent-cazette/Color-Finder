@@ -30,9 +30,6 @@ struct ColorDetectionView: View {
                     print(err.localizedDescription)
                 }
             }
-//            if capturedImage != nil {
-//                Image(uiImage: capturedImage!)
-//            }
         }
         .onAppear() {
             cameraService.capturePhoto()
